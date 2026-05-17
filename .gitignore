@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+*.js.map
+
+# Uploads (user-generated files)
+uploads/
+
+# PostgreSQL data directory (generado por Docker)
+postgres/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
+coverage/
+.nyc_output/
+
+# Prisma
+prisma/migrations/*.sql.bak
