@@ -129,8 +129,10 @@ async function main() {
     });
   }
 
-  const customer1 = await prisma.customer.create({
-    data: {
+  await prisma.customer.upsert({
+    where: { email: 'maria@example.com' },
+    update: {},
+    create: {
       firstName: 'María',
       lastName: 'González',
       email: 'maria@example.com',
@@ -139,8 +141,10 @@ async function main() {
     },
   });
 
-  const customer2 = await prisma.customer.create({
-    data: {
+  await prisma.customer.upsert({
+    where: { email: 'carlos@example.com' },
+    update: {},
+    create: {
       firstName: 'Carlos',
       lastName: 'Mendoza',
       email: 'carlos@example.com',
