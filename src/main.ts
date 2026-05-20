@@ -21,7 +21,7 @@ async function bootstrap() {
   app.useStaticAssets(join(process.cwd(), 'uploads'), { prefix: '/uploads' });
 
   app.enableCors({
-    origin: configService.get('FRONTEND_URL', 'http://localhost:5173'),
+    origin: configService.get('FRONTEND_URL', 'http://localhost:5173').split(','),
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
