@@ -34,7 +34,8 @@ stages:
       displayName: 'Build imagen Docker'
       inputs:
         command: build
-        repository: $(acrLoginServer)/$(imageName)
+        containerRegistry: 'acr-connection'
+        repository: $(imageName)          # ← solo 'backend'
         dockerfile: Dockerfile
         tags: |
           $(Build.BuildId)
@@ -44,7 +45,8 @@ stages:
       displayName: 'Push imagen al ACR'
       inputs:
         command: push
-        repository: $(acrLoginServer)/$(imageName)
+        containerRegistry: 'acr-connection'
+        repository: $(imageName)          # ← solo 'backend'
         tags: |
           $(Build.BuildId)
           latest
